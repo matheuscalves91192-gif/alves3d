@@ -10,8 +10,8 @@
     --bg: #0a0a0a;
     --surface: #111111;
     --surface2: #1a1a1a;
-    --accent: #ff6b1a;
-    --accent2: #ffaa00;
+    --accent: #4176e1;
+    --accent2: #5b8ff9;
     --text: #f0ede8;
     --muted: #888;
     --border: #222;
@@ -111,7 +111,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 40vw;
     color: transparent;
-    -webkit-text-stroke: 1px rgba(255,107,26,0.08);
+    -webkit-text-stroke: 1px rgba(65,118,225,0.08);
     pointer-events: none;
     line-height: 1;
   }
@@ -122,8 +122,8 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255,107,26,0.1);
-    border: 1px solid rgba(255,107,26,0.3);
+    background: rgba(65,118,225,0.1);
+    border: 1px solid rgba(65,118,225,0.3);
     color: var(--accent);
     padding: 6px 14px;
     border-radius: 100px;
@@ -196,7 +196,7 @@
   .btn-primary:hover {
     background: var(--accent2);
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(255,107,26,0.3);
+    box-shadow: 0 8px 32px rgba(65,118,225,0.3);
   }
 
   .btn-secondary {
@@ -360,6 +360,27 @@
     gap: 20px;
   }
 
+  .category-img-wrap {
+    width: calc(100% + 56px);
+    margin: -28px -28px 20px -28px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+    background: var(--surface2);
+  }
+
+  .category-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+  }
+
+  .category-card:hover .category-img {
+    transform: scale(1.05);
+  }
+
   .category-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -376,14 +397,14 @@
     position: absolute;
     bottom: 0; left: 0; right: 0;
     height: 0;
-    background: linear-gradient(to top, rgba(255,107,26,0.05), transparent);
+    background: linear-gradient(to top, rgba(65,118,225,0.05), transparent);
     transition: height 0.3s;
   }
 
   .category-card:hover {
     border-color: var(--accent);
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(255,107,26,0.1);
+    box-shadow: 0 12px 40px rgba(65,118,225,0.1);
   }
 
   .category-card:hover::before { height: 100%; }
@@ -411,8 +432,8 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(255,107,26,0.1);
-    border: 1px solid rgba(255,107,26,0.2);
+    background: rgba(65,118,225,0.1);
+    border: 1px solid rgba(65,118,225,0.2);
     color: var(--accent);
     padding: 4px 12px;
     border-radius: 100px;
@@ -506,12 +527,12 @@
     border-radius: 50%;
     background: var(--accent);
     cursor: pointer;
-    box-shadow: 0 0 0 4px rgba(255,107,26,0.15);
+    box-shadow: 0 0 0 4px rgba(65,118,225,0.15);
     transition: box-shadow 0.2s;
   }
 
   input[type="range"]::-webkit-slider-thumb:hover {
-    box-shadow: 0 0 0 8px rgba(255,107,26,0.2);
+    box-shadow: 0 0 0 8px rgba(65,118,225,0.2);
   }
 
   .field-range-wrap {
@@ -598,8 +619,8 @@
 
   .result-note {
     margin-top: 20px;
-    background: rgba(255,107,26,0.08);
-    border: 1px solid rgba(255,107,26,0.2);
+    background: rgba(65,118,225,0.08);
+    border: 1px solid rgba(65,118,225,0.2);
     border-radius: 8px;
     padding: 12px 16px;
     font-size: 12px;
@@ -649,12 +670,12 @@
     transition: border-color 0.3s;
   }
 
-  .step:hover { border-color: rgba(255,107,26,0.4); }
+  .step:hover { border-color: rgba(65,118,225,0.4); }
 
   .step-num {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 64px;
-    color: rgba(255,107,26,0.15);
+    color: rgba(65,118,225,0.15);
     line-height: 1;
     margin-bottom: -8px;
   }
@@ -870,10 +891,13 @@
   </div>
   <div class="categories-grid">
     <div class="category-card reveal">
+      <div class="category-img-wrap">
+        <img src="imgs/chaveiros.jpg" alt="Chaveiros" class="category-img" onerror="this.parentElement.style.display='none'">
+      </div>
       <div class="category-icon">🔑</div>
       <div class="category-name">Chaveiros</div>
       <div class="category-desc">Chaveiros personalizados com nome, tema, personagem ou logotipo. Ótimos para presentes e lembraças.</div>
-      <div class="category-range">R$15 – R$45</div>
+      <div class="category-range">R$8 – R$30</div>
       <div class="category-examples">
         <span class="tag">nomes</span>
         <span class="tag">personagens</span>
@@ -882,10 +906,13 @@
       </div>
     </div>
     <div class="category-card reveal">
+      <div class="category-img-wrap">
+        <img src="imgs/decoracao.jpg" alt="Decoração" class="category-img" onerror="this.parentElement.style.display='none'">
+      </div>
       <div class="category-icon">🌸</div>
       <div class="category-name">Decoração</div>
       <div class="category-desc">Peças decorativas para casa, escritório e festas. Vasos, esculturas, enfeites de parede e temáticos.</div>
-      <div class="category-range">R$30 – R$120</div>
+      <div class="category-range">R$10 – R$120</div>
       <div class="category-examples">
         <span class="tag">vasos</span>
         <span class="tag">natal</span>
@@ -894,10 +921,13 @@
       </div>
     </div>
     <div class="category-card reveal">
+      <div class="category-img-wrap">
+        <img src="imgs/utilidades.jpg" alt="Utilidades" class="category-img" onerror="this.parentElement.style.display='none'">
+      </div>
       <div class="category-icon">📦</div>
       <div class="category-name">Utilidades</div>
       <div class="category-desc">Organizadores, porta-canetas, suportes e acessórios funcionais para o dia a dia.</div>
-      <div class="category-range">R$25 – R$90</div>
+      <div class="category-range">R$12 – R$70</div>
       <div class="category-examples">
         <span class="tag">organizadores</span>
         <span class="tag">suportes</span>
@@ -906,10 +936,13 @@
       </div>
     </div>
     <div class="category-card reveal">
+      <div class="category-img-wrap">
+        <img src="imgs/geek.jpg" alt="Geek e Games" class="category-img" onerror="this.parentElement.style.display='none'">
+      </div>
       <div class="category-icon">🎮</div>
       <div class="category-name">Geek & Games</div>
       <div class="category-desc">Miniaturas, figuras articuladas, itens de jogos e cultura pop. Para colecionadores e gamers.</div>
-      <div class="category-range">R$35 – R$150</div>
+      <div class="category-range">R$15 – R$250</div>
       <div class="category-examples">
         <span class="tag">Minecraft</span>
         <span class="tag">Fortnite</span>
@@ -918,10 +951,13 @@
       </div>
     </div>
     <div class="category-card reveal">
+      <div class="category-img-wrap">
+        <img src="imgs/presentes.jpg" alt="Presentes Personalizados" class="category-img" onerror="this.parentElement.style.display='none'">
+      </div>
       <div class="category-icon">🎁</div>
       <div class="category-name">Presentes Personalizados</div>
       <div class="category-desc">Criamos peças únicas com o nome ou tema que você quiser. Ideal para aniversários, formaturas e datas especiais.</div>
-      <div class="category-range">R$40 – R$200</div>
+      <div class="category-range">R$15 – R$200</div>
       <div class="category-examples">
         <span class="tag">aniversário</span>
         <span class="tag">formatura</span>
@@ -930,6 +966,9 @@
       </div>
     </div>
     <div class="category-card reveal">
+      <div class="category-img-wrap">
+        <img src="imgs/corporativo.jpg" alt="Corporativo" class="category-img" onerror="this.parentElement.style.display='none'">
+      </div>
       <div class="category-icon">🏢</div>
       <div class="category-name">Corporativo</div>
       <div class="category-desc">Placas, logotipos, troféus e brindes personalizados para empresas. Pedidos em quantidade com desconto.</div>
@@ -981,7 +1020,7 @@
           <option value="1">PLA padrão</option>
           <option value="1.3">PLA+ premium</option>
           <option value="1.5">PETG resistente</option>
-          <option value="1.8">Flex / Especial</option>
+          <option value="0.85">ABS (mais econômico)</option>
         </select>
       </div>
 
@@ -1122,8 +1161,8 @@
 <script>
 // CALCULATOR
 const bases = {
-  chaveiro: 18, decoracao: 45, utilidade: 35,
-  geek: 50, presente: 55, corporativo: 70
+  chaveiro: 12, decoracao: 35, utilidade: 38,
+  geek: 50, presente: 55, corporativo: 45
 };
 
 function updateQty(v) {
@@ -1158,9 +1197,9 @@ function calcular() {
 
   const note = document.getElementById('result-note');
   if (cat === 'corporativo') {
-    note.textContent = '📞 Para pedidos corporativos, entre em contato para orçamento detalhado.';
+    note.innerHTML = '📞 Para pedidos corporativos, entre em contato para orçamento detalhado.<br><br>⚠️ <strong>Obs:</strong> O valor final pode ser menor ou maior dependendo da resistência necessária, nível de detalhes e complexidade da peça.';
   } else {
-    note.textContent = '⚡ Estimativa sem frete. Valor exato confirmado no WhatsApp.';
+    note.innerHTML = '⚡ Estimativa sem frete. Valor exato confirmado no WhatsApp.<br><br>⚠️ <strong>Obs:</strong> O valor pode variar para mais ou para menos dependendo da resistência necessária e do nível de detalhes da peça.';
   }
 
   // Update WPP link
