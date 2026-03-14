@@ -116,6 +116,28 @@
     padding: 120px 48px 80px;
     position: relative;
     overflow: hidden;
+    background-image: url('imgs/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(10,10,10,0.92) 0%,
+      rgba(10,10,10,0.75) 50%,
+      rgba(10,10,10,0.4) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-content, .hero-visual {
+    position: relative;
+    z-index: 2;
   }
 
   .hero::after {
@@ -133,6 +155,7 @@
   }
 
   .hero-content { position: relative; z-index: 2; }
+  /* hero z-index handled in .hero::before */
 
   .hero-badge {
     display: inline-flex;
