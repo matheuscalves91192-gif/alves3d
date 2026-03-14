@@ -1978,14 +1978,14 @@ function buildMsg() {
   const detalhe = document.getElementById('f-detalhe').value.trim();
 
   let msg = `Olá! Vim pelo site e quero fazer um pedido personalizado.\n\n`;
-  if (nome)    msg += `👤 Nome: ${nome}\n`;
-  if (cidade)  msg += `📍 Cidade: ${cidade}\n`;
-  if (produto) msg += `🎯 Produto: ${produto}\n`;
-  if (cat)     msg += `📦 Categoria: ${cat}\n`;
-  if (tam)     msg += `📐 Tamanho: ${tam}\n`;
-  if (cor)     msg += `🎨 Cor: ${cor}\n`;
-  if (qty)     msg += `🔢 Quantidade: ${qty}\n`;
-  if (detalhe) msg += `\n📝 Detalhes: ${detalhe}\n`;
+  if (nome)    msg += `Nome: ${nome}\n`;
+  if (cidade)  msg += `Cidade: ${cidade}\n`;
+  if (produto) msg += `Produto: ${produto}\n`;
+  if (cat)     msg += `Categoria: ${cat}\n`;
+  if (tam)     msg += `Tamanho: ${tam}\n`;
+  if (cor)     msg += `Cor: ${cor}\n`;
+  if (qty)     msg += `Quantidade: ${qty}\n`;
+  if (detalhe) msg += `\nDetalhes: ${detalhe}\n`;
 
   const btn = document.getElementById('form-wpp-btn');
   btn.href = `https://wa.me/5516992364004?text=${encodeURIComponent(msg)}`;
